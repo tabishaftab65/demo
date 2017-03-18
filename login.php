@@ -27,6 +27,7 @@ if(isset($_POST['login'])){
 	$username = $_POST['username']; 
 	$password = $_POST['password'];
 	$query = "select username, password from user where username = '".$username."' and password = '".$password."'";
+	//print_r($query);
 	$connect = new Database();                                                            //connecting to database.
 	$result = $connect->getConnected()->query($query);
 	$connect->close();                                                                    //closing the connection.
@@ -39,10 +40,7 @@ if(isset($_POST['login'])){
 	}
 	else{
 		echo "Wrong Credentials";
-	}                                                  
-}
-else{
-	echo "Please enter the credentials";
+	}
 }
 ?>
 </body>
